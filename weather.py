@@ -1,6 +1,6 @@
 import requests
 from cachetools import cached, TTLCache
-from main import OPENWEATHER_KEY
+from config import OPENWEATHER_KEY
 weather_now = TTLCache(maxsize=10, ttl=600)
 
 @cached(weather_now)

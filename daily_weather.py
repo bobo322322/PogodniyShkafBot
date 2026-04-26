@@ -2,7 +2,7 @@ from cachetools import cached, TTLCache
 import requests
 from datetime import datetime, timedelta
 import pytz
-from main import OPENWEATHER_KEY
+from config import OPENWEATHER_KEY
 today_forecast_cache = TTLCache(maxsize=10, ttl=2300)
 @cached(today_forecast_cache)
 def get_daily_forecast():

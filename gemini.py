@@ -1,7 +1,7 @@
 from google import genai
 from daily_weather import ai_weather
 from google.genai import types as genai_types
-from main import GEMINI_KEY
+from config import GEMINI_KEY
 
 import asyncio
 import json

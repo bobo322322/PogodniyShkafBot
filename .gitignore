@@ -5,3 +5,4 @@ input_*.jpg
 *.log
 ward.db
 .env
+config.py
