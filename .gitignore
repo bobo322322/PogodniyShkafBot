@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+input_*.jpg
+*.log
+ward.db
+.env
