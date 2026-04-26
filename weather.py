@@ -1,6 +1,6 @@
 import requests
 from cachetools import cached, TTLCache
-
+from main import OPENWEATHER_KEY
 weather_now = TTLCache(maxsize=10, ttl=600)
 
 @cached(weather_now)
@@ -9,7 +9,7 @@ def get_weather_now():
         "https://api.openweathermap.org/data/2.5/weather",
         params = {
             "q": "Vladivostok",
-            "appid": "cb6af9d088d5ebb513e02441a544450a",
+            "appid": OPENWEATHER_KEY,
             "units": "metric",
             "lang": "ru"
         },

@@ -1,13 +1,13 @@
 from google import genai
 from daily_weather import ai_weather
 from google.genai import types as genai_types
-
+from main import GEMINI_KEY
 
 import asyncio
 import json
 
 async def ai_recommend(wardrobe_list):
-    client = genai.Client(api_key="AIzaSyDy05wRHmjN8o7hYrcUnDNUfN1XYX8uLWc")
+    client = genai.Client(api_key=GEMINI_KEY)
     ai_weather()
     response = await client.aio.models.generate_content(
         model="gemini-2.5-flash", contents=f"""
@@ -36,7 +36,7 @@ async def ai_recommend(wardrobe_list):
 async def image_description(path):
     model_id = 'gemini-2.5-flash'
 
-    client = genai.Client(api_key="AIzaSyDy05wRHmjN8o7hYrcUnDNUfN1XYX8uLWc")
+    client = genai.Client(api_key=GEMINI_KEY)
 
     with open(path, 'rb') as f:
         image_bytes = f.read()
